@@ -2,7 +2,7 @@
 
 var userData = {
 
-  name:"",
+  name:"test",
   email:"",
   html:{links:[], dislikes:[]},
   css: {links:[], dislikes:[]},
@@ -17,6 +17,10 @@ var userData = {
 $("#startBtn").click(function(event){
   $("#welcome").hide();
   $("#q1").show();
+  //add a new code to check if the user have entered previous values
+  if(userData.name){
+    $("#name").val(userData.name);
+  }
 });
 
 
@@ -28,26 +32,26 @@ $("#name").change(function(event){
 
 $("#email").change(function(event){
 
-console.log($("#email").val());
+  console.log($("#email").val());
 //to-do: validate email value
-if($("#email").val() && $("#name").val() )
-$("#q1Next").prop("disabled",false);
+  if($("#email").val() && $("#name").val() )
+    $("#q1Next").prop("disabled",false);
 
 });
 
 
 $("#q1Next").click(function(event){
-userData.name= $("#name").val();
-userData.email= $("#email").val();
-$("#q1").hide();
-$("#q2").show();
+  userData.name= $("#name").val();
+  userData.email= $("#email").val();
+  $("#q1").hide();
+  $("#q2").show();
 
 });
 
 $("#htmlQ").click(function(event){
 
-$("#q1").hide();
-$("#q2a").show();
+    $("#q1").hide();
+    $("#q2a").show();
 
 });
 
@@ -55,22 +59,22 @@ $("#q2a").show();
 
 $("#cssQ").click(function(event){
 
-$("#q1").hide();
-$("#q2b").show();
+    $("#q1").hide();
+    $("#q2b").show();
 
 });
 
 $("#jsQ").click(function(event){
 
-$("#q1").hide();
-$("#q2c").show();
+    $("#q1").hide();
+    $("#q2c").show();
 
 });
 
 
 $(".prevQ2").click(function(event){
 
-$("#q2").show();
-$(this).parent().hide();
+    $("#q2").show();
+    $(this).parent().hide();
 
 });
